@@ -96,18 +96,19 @@ function gameStart(bombPosition, chances) {
       gameOverMessage();
       return;
     }
-    
+
     const number = userInput() - 1;
     chancesLeftMessage(i);
     updateField(number, bombPosition);
-    console.log(giveHint(number, bombPosition - 1));
-
+    
     const gameWinOrNot = number === (bombPosition -1);
-
+    
     if (gameWinOrNot) {
       winMessage();
       return;
     }
+
+    console.log(giveHint(number, bombPosition - 1));
   }
 }
 
